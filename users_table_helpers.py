@@ -13,7 +13,7 @@ def populate_users_table():
     ]
 
     with sessionmaker(bind= create_engine(const.DB_URL))() as session:
-        session.execute(text('USE [Jan23TrainingDB16]'))
+        session.execute(text(''))
         for user in users:
             session.add(user)
 
@@ -23,7 +23,7 @@ def populate_users_table():
 
 def read_users_table():
     with sessionmaker(bind= create_engine(const.DB_URL))() as session:
-        session.execute(text('USE [Jan23TrainingDB16]'))
+        session.execute(text(''))
         users = session.query(UsersModel).all()
         for user in users:
             print(user)
